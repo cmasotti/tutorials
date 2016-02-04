@@ -1,19 +1,6 @@
 # **tutorials**
 # From fastq files to FPKM data
 
-## Raw RNAseq data  
-**SRA=Sequence Read Archive**  
-http://www.ncbi.nlm.nih.gov/sra  
-Raw sequencing and alignment data available to research community!  
-
-_Illumina Human Body Map 2.0 Transcriptome Project_  
-http://www.ncbi.nlm.nih.gov/Traces/study/  
-SRA Study: ERP000546  
-Samples: ERR030874, ERR030872, ERR030875, ERR030873, ERR030876, ERR030885, ERR030878, ERR030882, ERR030886, ERR030887, ERR030883, ERR030880, ERR030881, ERR030877, ERR030884, ERR030879.  
-  
-## Working files  
-**
-
 ## Softwares to download, install, and add to $PATH  
 >How to add the applications to $PATH (options):  
 + Directly write in .bashrc file:  
@@ -101,8 +88,30 @@ Requirement: Bioconductor release 3.2
 **source("https://bioconductor.org/biocLite.R")**  
 **biocLite("cummeRbund")**  
 
+## Raw RNAseq data  
+**SRA=Sequence Read Archive**  
+http://www.ncbi.nlm.nih.gov/sra  
+Raw sequencing and alignment data available to research community!  
 
+_Illumina Human Body Map 2.0 Transcriptome Project_  
+http://www.ncbi.nlm.nih.gov/Traces/study/  
+SRA Study: ERP000546  
+Samples: ERR030874, ERR030872, ERR030875, ERR030873, ERR030876, ERR030885, ERR030878, ERR030882, ERR030886, ERR030887, ERR030883, ERR030880, ERR030881, ERR030877, ERR030884, ERR030879.  
+  
+## Reference Files    
+We need a genome against which to align our reads (fasta file):  
+_Download the reference genome (hg19 – GRCh37; Feb 2009 assembly)_  
+**wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr19.fa.gz**  
+**gunzip chr19.fa.gz**  
 
+We need a reference gene annotation to quantify expression of known transcripts (.gtf file):  
+_Download the human GENCODE Gene Set_   
+GENCODE: http://www.gencodegenes.org/releases/  
+**wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_16/gencode.v16.annotation.gtf.gz**  
+**gunzip gencode.v16.annotation.gtf.gz**  
+**grep chr19 gencode.v16.annotation.gtf > gencode.v16.annotation_chr19.gtf**  
+
+## Files needed for this tutorial  
 
 
 
