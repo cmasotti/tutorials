@@ -1,7 +1,18 @@
 # **tutorials**
 # From fastq files to FPKM data
 
-## Working data
+## Raw RNAseq data  
+**SRA=Sequence Read Archive**  
+http://www.ncbi.nlm.nih.gov/sra  
+Raw sequencing and alignment data available to research community!  
+
+_Illumina Human Body Map 2.0 Transcriptome Project_  
+http://www.ncbi.nlm.nih.gov/Traces/study/  
+SRA Study: ERP000546  
+Samples: ERR030874, ERR030872, ERR030875, ERR030873, ERR030876, ERR030885, ERR030878, ERR030882, ERR030886, ERR030887, ERR030883, ERR030880, ERR030881, ERR030877, ERR030884, ERR030879.  
+  
+## Working files  
+**
 
 ## Softwares to download, install, and add to $PATH  
 >How to add the applications to $PATH (options):  
