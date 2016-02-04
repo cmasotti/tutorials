@@ -126,7 +126,34 @@ wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_16/gencode.v16.ann
 gunzip gencode.v16.annotation.gtf.gz  
 grep chr19 gencode.v16.annotation.gtf > gencode.v16.annotation_chr19.gtf  
 ```
-## Files needed for this tutorial  
+## Working files  
+
+## Pipeline  
+Firstly, test software installation by directly typing their names on prompt. If they were correctly added to $PATH, a list of parameters to run will appear. All applications herein used are very well documented, and parameters are explained in --help command (e.g., bowtie2 –help) or online manuals.   
+
+# Step1: Indexing reference genome for Bowtie2/Tophat2 alignment  
+```bash
+bowtie2-build chr19.fa hg19_chr19
+
+# Bowtie2 will create six files:
+# hg19_chr19.1.bt2
+# hg19_chr19.2.bt2
+# hg19_chr19.3.bt2
+# hg19_chr19.4.bt2
+# hg19_chr19.rev.1.bt2
+# hg19_chr19.rev.2.bt2
+
+ln –s hg19_chr19.fa .
+#  Tophat2 also requires the reference .fa file. Rename chr19.fa and create a symbolic link for in the same directory. 
+```  
+# Step2: Perform alignment with Tophat2  
+> https://ccb.jhu.edu/software/tophat/tutorial.shtml#ref 
+TopHat map reads firstly by running Bowtie, which identifies places where reads map end to end. Bowtie will identify "islands" in your reference genome where reads piled up. Many of these islands will be exons. TopHat will then find splice junctions using the reads that did not get mapped to an island.  
+
+
+
+
+
 
 
 
